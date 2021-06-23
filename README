@@ -1,0 +1,7 @@
+This is an implementation of a facial keypoint detector.
+
+Data should be downloaded from here, and placed in these directories:
+1. Test images: 'train-test-data/test'
+2. Training images: 'train-test-data/training'
+3. Test image keypoints as test_frames_keypoints.csv: 'train-test-data'
+4. Training image keypoints as training_frames_keypoints.csv: 'train-test-data'

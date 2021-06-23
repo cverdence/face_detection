@@ -1,9 +1,9 @@
 # Load libraries
 import torch
 import torch.nn as nn
-from facial_detection.model import ConvolutionalNeuralNetwork
+from src.model import ConvolutionalNeuralNetwork
 from torch.utils.data import DataLoader
-import facial_detection.evaluation_and_visualize as ev
+import src.evaluate_and_visualize as ev
 import torch.optim as optim
 import matplotlib.pyplot as plt
 
@@ -36,7 +36,7 @@ loss = net.train_net(n_epochs, train_loader, optimizer, criterion)
 plt.plot(loss)
 
 # Save model
-torch.save(net.state_dict(), 'facial_detection/saved_models/trained_model_2.pt')
+torch.save(net.state_dict(), 'facial_detection/saved_models/trained_model.pt')
 
 # Feature visualization
 weights1 = net.conv1.weight.data

@@ -1,6 +1,6 @@
 # Load libraries
-import facial_detection.load_and_visualize_functions as lv
-import facial_detection.transforms as t
+import src.load_and_visualize as lv
+import src.transforms as t
 import pandas as pd
 import numpy as np
 from torchvision import transforms
@@ -37,5 +37,6 @@ data_transform = transforms.Compose([t.Rescale(250), t.RandomCrop(224), t.Normal
 transformed_train_dataset = t.FacialKeypointsDataset(train_key_points, train_dir, transform=data_transform)
 transformed_test_dataset = t.FacialKeypointsDataset(test_key_points, test_dir, transform=data_transform)
 
-torch.save(transformed_train_dataset, 'facial_detection/transformed_data/transformed_train_dataset.torch')
-torch.save(transformed_test_dataset, 'facial_detection/transformed_data/transformed_test_dataset.torch')
+# Save dataset
+torch.save(transformed_train_dataset, 'data/transformed_data/transformed_train_dataset.torch')
+torch.save(transformed_test_dataset, 'data/transformed_data/transformed_test_dataset.torch')
