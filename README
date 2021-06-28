@@ -1,7 +1,20 @@
 This is an implementation of a facial keypoint detector.
 
-Data should be downloaded from here, and placed in these directories:
-1. Test images: 'train-test-data/test'
-2. Training images: 'train-test-data/training'
-3. Test image keypoints as test_frames_keypoints.csv: 'train-test-data'
-4. Training image keypoints as training_frames_keypoints.csv: 'train-test-data'
+After forking, create a directory folder at the same level as src. Within this directory, create 5 new directories:
+1. detector: Download frontal face as haarcascade_frontalface_default.xml from http://alereimondo.no-ip.org/OpenCV/34/
+and insert it here
+2. images: Download an image of two faces (e.g. of the Obamas) and place it here as obamas.jpg
+3. saved_models: Keep this empty for now
+4. train-test-data: Data should be downloaded from https://www.cs.tau.ac.il/~wolf/ytfaces/, and placed in
+these directories:
+    a. Test images: 'train-test-data/test'
+    b. Training images: 'train-test-data/training'
+    c. Test image keypoints as test_frames_keypoints.csv: 'train-test-data'
+    d. Training image keypoints as training_frames_keypoints.csv: 'train-test-data'
+5. transformed_data: Keep this empty for now
+
+Now run the files in this order:
+1. data_preparation.py: To prepare the data
+2. network_architecture.py: To train the facial keypoint detector
+3. model_visualization.py: To test the facial keypoint detection algorithm and visualize on some images
+

@@ -14,7 +14,7 @@ transformed_dataset_test = torch.load('facial_detection/transformed_data/transfo
 net = ConvolutionalNeuralNetwork()
 
 # Prepare data sets for training
-batch_size = 32
+batch_size = 10
 train_loader = DataLoader(transformed_dataset_train, batch_size=batch_size, shuffle=True, num_workers=0)
 test_loader = DataLoader(transformed_dataset_test, batch_size=batch_size, shuffle=True, num_workers=0)
 
@@ -28,10 +28,10 @@ ev.visualize_output(5, test_images, test_outputs, gt_pts)
 
 # Define loss and optimization
 criterion = nn.MSELoss()
-optimizer = optim.Adam(net.parameters(), lr=0.001)
+optimizer = optim.Adam(net.parameters(), lr=0.0005)
 
 # Train
-n_epochs = 1
+n_epochs = 2
 loss = net.train_net(n_epochs, train_loader, optimizer, criterion)
 plt.plot(loss)
 
